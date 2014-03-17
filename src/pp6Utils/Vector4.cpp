@@ -1,5 +1,11 @@
 #include "Vector4.hpp"
 
+Vector4::Vector4(double t, double x, double y, double z)
+    : m_t(t), m_x(x), m_y(y), m_z(z)
+{
+    m_interval = this->interval();
+}
+
 bool Vector4::setT(double val)
 {
     m_t = val;
