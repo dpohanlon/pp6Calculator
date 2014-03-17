@@ -11,6 +11,7 @@
 
 #include "pp6Days/dayOneFuncs.h"
 #include "pp6Days/dayTwoFuncs.h"
+#include "pp6Days/dayThreeFuncs.h"
 
 // Evaluate binary functions from user input
 double evalBFunc(std::string input);

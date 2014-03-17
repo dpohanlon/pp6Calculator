@@ -42,6 +42,7 @@ double evalBFunc(std::string input)
 
 void displayMenu(void)
 {
+    std::cout << std::endl;
     std::cout << "This is PP6 calculator." << std::endl;
     std::cout << std::endl;
     std::cout << "Available binary functions: add, subtract, ";
@@ -50,6 +51,7 @@ void displayMenu(void)
     std::cout << "Q. Quit" << std::endl;
     std::cout << "1. Day One" << std::endl;
     std::cout << "2. Day Two" << std::endl;
+    std::cout << "3. Day Three" << std::endl;
     std::cout << "9. Global Thermonuclear War" << std::endl;
     std::cout << std::endl;
 }
@@ -76,6 +78,9 @@ int main(int argc, char const *argv[])
                 break;
             case '2':
                 DayTwoFuncs::menu();
+                break;
+            case '3':
+                DayThreeFuncs::menu();
                 break;
             case '9':
                 std::cout << "Wouldn't you prefer a good game of chess?" << std::endl;

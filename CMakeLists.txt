@@ -20,5 +20,16 @@ include_directories(src, src/pp6Days, src/pp6Utils)
 
 execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory bin)
 
-add_executable(bin/pp6Calculator src/pp6Calculator.h src/pp6Calculator.cpp src/pp6Utils/FileReader.cpp src/pp6Days/dayOneFuncs.h src/pp6Days/dayOneFuncs.cpp src/pp6Days/dayTwoFuncs.h src/pp6Days/dayTwoFuncs.cpp)
+add_executable( bin/pp6Calculator
+                src/pp6Calculator.h
+                src/pp6Calculator.cpp
+                src/pp6Utils/FileReader.cpp
+                src/pp6Days/dayOneFuncs.h
+                src/pp6Days/dayOneFuncs.cpp
+                src/pp6Days/dayTwoFuncs.h
+                src/pp6Days/dayTwoFuncs.cpp
+                src/pp6Utils/Vector4.hpp
+                src/pp6Utils/Vector4.cpp
+                src/pp6Days/dayThreeFuncs.h
+                src/pp6Days/dayThreeFuncs.cpp )
 
