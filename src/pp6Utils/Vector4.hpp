@@ -41,7 +41,7 @@ public:
     Vector4 & operator *= (const Vector4 & v) { m_t *= v.getT(); m_x *= v.getX(); m_y *= v.getY(); m_z *= v.getZ(); return *this; }
     Vector4 & operator /= (const Vector4 & v) { m_t /= v.getT(); m_x /= v.getX(); m_y /= v.getY(); m_z /= v.getZ(); return *this; }
 
-    Vector4 operator - (void) { return Vector4(-m_t, -m_x, -m_y, -m_z); }
+    Vector4 operator - (void) const { return Vector4(-m_t, -m_x, -m_y, -m_z); }
 
 private:
 
@@ -64,7 +64,7 @@ inline Vector4 operator + (const double c, const Vector4 & v) { return Vector4(c
 inline Vector4 operator - (const double c, const Vector4 & v) { return Vector4(c - v.getT(), c - v.getX(), c - v.getY(), c - v.getZ()); }
 
 inline Vector4 operator + (const Vector4 & v1, const Vector4 & v2) { return Vector4(v1.getT() + v2.getT(), v1.getX() + v2.getX(), v1.getY() + v2.getY(), v1.getY() + v2.getY()); }
-inline Vector4 operator - (const Vector4 & v1, Vector4 & v2) { return v1 + (-v2); } // Second arg not const?
+inline Vector4 operator - (const Vector4 & v1, const Vector4 & v2) { return v1 + (-v2); }
 
 inline std::ostream& operator<<(std::ostream & stream, const Vector4 & v)
 {
