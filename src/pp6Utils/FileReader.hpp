@@ -19,6 +19,8 @@ class FileReader {
   bool inputFailed() const;
   bool isValid() const;
 
+  void reset();
+
  private:
   void skip_fields(std::istringstream& ist, const int n);
   std::ifstream file;

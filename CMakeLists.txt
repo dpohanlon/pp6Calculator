@@ -30,6 +30,8 @@ add_executable( bin/pp6Calculator
                 src/pp6Days/dayTwoFuncs.cpp
                 src/pp6Utils/Vector4.hpp
                 src/pp6Utils/Vector4.cpp
+                src/pp6Utils/Vector3.hpp
+                src/pp6Utils/Particle.hpp
                 src/pp6Days/dayThreeFuncs.h
                 src/pp6Days/dayThreeFuncs.cpp )
 

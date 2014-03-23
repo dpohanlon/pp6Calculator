@@ -2,6 +2,7 @@
 #define DAYTWOFUNCS_H
 
 #include <cmath>
+#include <cassert>
 #include <random>
 #include <iostream>
 

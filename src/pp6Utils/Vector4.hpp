@@ -2,15 +2,16 @@
 #define VECTOR4_HPP
 
 #include <cmath>
+#include <iostream>
 
 #include "myMath.hpp"
-#include <iostream>
 
 class Vector4
 {
 
 public:
 
+    Vector4(void) : m_t(0), m_x(0), m_y(0), m_z(0) { }
     Vector4(double t, double x, double y, double z);
 
     enum causalType {
@@ -19,19 +20,21 @@ public:
         LIGHTLIKE
     };
 
-    inline double getT(void) const { return m_t; }
-    inline double getX(void) const { return m_x; }
-    inline double getY(void) const { return m_y; }
-    inline double getZ(void) const { return m_z; }
-    inline causalType getInterval(void) const { return m_interval; }
+    double getT(void) const { return m_t; }
+    double getX(void) const { return m_x; }
+    double getY(void) const { return m_y; }
+    double getZ(void) const { return m_z; }
 
-    bool setT(double val);
-    bool setX(double val);
-    bool setY(double val);
-    bool setZ(double val);
+    void setT(double val) { m_t = val; }
+    void setX(double val) { m_x = val; }
+    void setY(double val) { m_y = val; }
+    void setZ(double val) { m_z = val; }
+
+    // Get the type of interval described by mag(*this)
+    causalType getInterval(void) const { return m_interval; }
 
     // Boost in alon z-axis by velocity v
-    bool boostZ(double v);
+    void boostZ(double v);
 
     // Returns 4-vector magnitude using g = diag(-1, 1, 1, 1)
     double mag(void) const;
@@ -73,6 +76,7 @@ inline std::ostream& operator<<(std::ostream & stream, const Vector4 & v)
     stream << v.getX() << " ";
     stream << v.getY() << " ";
     stream << v.getZ();
+    stream << " ]";
 
     return stream;
 }
@@ -93,7 +97,5 @@ inline std::istream& operator>>(std::istream & stream, Vector4 & v)
 
     return stream;
 }
-
-
 
 #endif

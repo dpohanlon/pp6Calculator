@@ -33,23 +33,25 @@ void DayTwoFuncs::displayMenu(void)
     std::cout << std::endl;
     std::cout << "Q. Back" << std::endl;
     std::cout << "1. Generate 100 particles" << std::endl;
-    std::cout << "2. Read in muons NOT FULLY IMPLEMENTED" << std::endl;
+    std::cout << "2. Read in muons" << std::endl;
     std::cout << std:: endl;
 }
 
 void DayTwoFuncs::bubbleSort(double * array, int size)
 {
-    bool swap;
+    assert(array && "Null pointer");
+
+    bool done;
 
     do {
-        swap = false;
+        done = false;
         for (int i = 1; i < size; ++i) {
             if (array[i - 1] > array[i]) {
                 DayTwoFuncs::swap(array[i - 1], array[i]);
-                swap = true;
+                done = true;
             }
         }
-    } while (swap);
+    } while (done);
 }
 
 void DayTwoFuncs::swap(double & a, double & b)
@@ -61,6 +63,8 @@ void DayTwoFuncs::swap(double & a, double & b)
 
 double DayTwoFuncs::sum(const double * array, int size)
 {
+    assert(array && "Null pointer");
+
     double sum = 0;
     for (int i = 0; i < size; ++i) {
         sum += array[i];
@@ -71,6 +75,8 @@ double DayTwoFuncs::sum(const double * array, int size)
 
 double DayTwoFuncs::mean(const double * array, int size)
 {
+    assert(array && "Null pointer");
+
     double sum = DayTwoFuncs::sum(array, size);
 
     return sum / size;
@@ -78,6 +84,8 @@ double DayTwoFuncs::mean(const double * array, int size)
 
 double DayTwoFuncs::stdDev(const double * array, int size)
 {
+    assert(array && "Null pointer");
+
     double sqArray[size];
     DayTwoFuncs::square(array, size, sqArray);
 
@@ -90,6 +98,8 @@ double DayTwoFuncs::stdDev(const double * array, int size)
 
 void DayTwoFuncs::square(const double * array, int size, double * out)
 {
+    assert(array && out && "Null pointer");
+    
     for (int i = 0; i < size; ++i) {
         out[i] = pow(array[i], 2);
     }
@@ -124,13 +134,14 @@ void DayTwoFuncs::genParticles(void)
 
 void DayTwoFuncs::readMuons(std::string fileName)
 {
+    // const double muonMass = 0.10565837; // GeV
+
     // FileReader f(fileName);
 
     // if (f.isValid()) {
     //     while (f.nextLine()) {
 
     //         // Event   Name  p_x p_y p_z Data Source
-    //         // No energy?!
 
     //         std::string particle = f.getFieldAsString(2);
     //         std::string source = f.getFieldAsString(6);
@@ -138,10 +149,14 @@ void DayTwoFuncs::readMuons(std::string fileName)
     //         if (source == "run4.dat" &&
     //            (particle == "mu+" || particle == "mu-")) {
 
+    //             int pdg = (particle = "mu-") ? 13 : -13;
+
     //             int id = f.getFieldAsInt(1);
     //             double px = f.getFieldAsFloat(3);
     //             double py = f.getFieldAsFloat(4);
     //             double pz = f.getFieldAsFloat(5);
+
+    //             Vector3
 
     //         }
     //     }

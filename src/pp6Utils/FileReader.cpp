@@ -93,3 +93,8 @@ bool FileReader::inputFailed() const {
   return failed;
 }
 
+void FileReader::reset() {
+  file.clear();
+  file.seekg(0, std::ios::beg);
+}
+
