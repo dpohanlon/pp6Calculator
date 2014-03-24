@@ -6,21 +6,22 @@ namespace MyMap {
 template<typename K, typename V>
 struct Node
 {
-    Node(K iKey, V iVal) : key(iKey), value(iVal) { }
+    Node(K iKey, V iVal) : key(iKey), value(iVal), left(nullptr), right(nullptr) { }
 
     K key;
     V value;
 
-    Node * left = nullptr;
-    Node * right = nullptr;
+    Node * left;
+    Node * right;
 };
 
 template<typename K, typename V>
 struct Map
 { 
-    Node<K, V> * root = new Node<K, V>(K(), V());
-
+    Map(void) : root(new Node<K, V>(K(), V())) { }
     ~Map(void) { removeChildren(root); }
+    
+    Node<K, V> * root;
 };
 
 template<typename K, typename V>

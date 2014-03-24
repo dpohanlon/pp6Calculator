@@ -1,4 +1,4 @@
-#include "DayThreeFuncs.h"
+#include "dayThreeFuncs.h"
 
 void DayThreeFuncs::menu(void)
 {
@@ -111,8 +111,10 @@ void DayThreeFuncs::readMuons(std::string fileName)
     for (int p1 = 0; p1 < nMuP; ++p1) {
         for (int p2 = 0; p2 < nMuM; ++p2) {
             masses[i++] = DayThreeFuncs::invariantMass(muP[p1], muM[p2]);
+
             std::stringstream sstr;
             sstr << muP[p1].id << " and " << muM[p2].id;
+
             ids[i++] = sstr.str();
 
         }

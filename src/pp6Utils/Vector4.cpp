@@ -25,8 +25,8 @@ double Vector4::mag(void) const
 
 Vector4::causalType Vector4::interval(void) const
 {
-    double mag = this->mag();
+    double m = this->mag();
 
-    return (mag > 0) ? Vector4::SPACELIKE : Vector4::TIMELIKE;
+    return (m > 0) ? Vector4::SPACELIKE : Vector4::TIMELIKE;
     return Vector4::LIGHTLIKE;
 }
