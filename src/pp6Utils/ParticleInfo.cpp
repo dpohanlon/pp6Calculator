@@ -31,25 +31,25 @@ ParticleInfo::~ParticleInfo(void)
 
 int ParticleInfo::getPDGCode(std::string name)
 {
-    return names[n]->pdg;
+    return names[name]->pdg;
 }
 
 int ParticleInfo::getCharge(int pdg)
 {
-    return pdgs[p]->charge;
+    return pdgs[pdg]->charge;
 }
 
 std::string ParticleInfo::getName(int pdg)
 {
-    return pdgs[p]->name;
+    return pdgs[pdg]->name;
 }
 
 double ParticleInfo::getMassMeV(int pdg)
 {
-    return pdgs[p]->mass;
+    return pdgs[pdg]->mass;
 }
 
 double ParticleInfo::getMassGeV(int pdg)
 {
-    return pdgs[p]->mass * 0.001;
+    return pdgs[pdg]->mass * 0.001;
 }
